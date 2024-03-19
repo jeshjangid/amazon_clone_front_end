@@ -2,6 +2,10 @@ import React from "react";
 
 
 function NavbarView(props) {
+
+  const {t, i18n} = props;
+  console.log(t('navbar.sidebar_title'));
+
   return (
     <React.Fragment>
   {/* <!-- Navbar Starts --> */}
@@ -95,13 +99,6 @@ function NavbarView(props) {
                     </label>
                   </div>
                   
-                  <div className="dropdown-divider"></div>
-                  <div className="custom-control custom-radio">
-                    <input className="custom-control-input" type="radio" name="prefLang" id="banglaLang" value="bangla" checked />
-                    <label className="custom-control-label" htmlFor="banglaLang">
-                      <img src="assets/img/flag/bangla.svg" alt="uk flag" width="50" height="30" />
-                    </label>
-                  </div>
                   <div className="dropdown-divider"></div>
                 </form>
               </div>

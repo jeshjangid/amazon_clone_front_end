@@ -1,9 +1,9 @@
 import NavbarView from "./NavbarView"
 
-const NavbarContainer = () => {
+const NavbarContainer = (props) => {
   return (
     <div>
-    <NavbarView />
+    <NavbarView {...props} />
     </div>
   )
 }
