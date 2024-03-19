@@ -1,7 +1,9 @@
+import NavbarContainer from "./components/layout/Navbar/NavbarContainer";
+
 function App() {
   return (
     <div>
-    <h1>Hello world</h1>
+    <NavbarContainer />
     </div>
   )
 }
