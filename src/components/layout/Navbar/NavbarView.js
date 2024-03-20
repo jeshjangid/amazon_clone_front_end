@@ -3,8 +3,8 @@ import React from "react";
 
 function NavbarView(props) {
 
-  const {t, i18n} = props;
-  console.log(t('navbar.sidebar_title'));
+  const {t, i18n, prefLang} = props;
+  
 
   return (
     <React.Fragment>
@@ -21,13 +21,13 @@ function NavbarView(props) {
             <div className="drawer-header bg-dark text-white">
               <h4 className="drawer-title mx-auto" id="drawer-demo-title">
                 <i className="fas fa-user-circle"></i>
-                Hello, Sign In
+                {t('navbar.sidebar_title')}
               </h4>
             </div>
             <div className="drawer-body">
-              <h6 className="text-muted text-uppercase">Help & Settings</h6>
-              <a href="your_account.html" className="btn btn-outline-success my-2 btn-sm">You Account</a>
-              <a href="login.html" className="btn btn-warning my-2  btn-sm">Sign in</a>
+              <h6 className="text-muted text-uppercase">{t('navbar.sidebar_help_title')}</h6>
+              <a href="your_account.html" className="btn btn-outline-success my-2 btn-sm">{t('navbar.btn_account_title')}</a>
+              <a href="login.html" className="btn btn-warning my-2  btn-sm">{t('navbar.btn_signin_title')}</a>
             </div>
             <div className="drawer-footer">
               <button type="button" className="btn btn-outline-danger btn-sm" data-dismiss="drawer" aria-label="Close">
@@ -56,11 +56,11 @@ function NavbarView(props) {
                     All
                   </button>
                   <div className="dropdown-menu" aria-labelledby="btnCategoryDropdownMenu">
-                    <a className="dropdown-item" href="#">All</a>
-                    <a className="dropdown-item" href="#">Smartphone</a>
-                    <a className="dropdown-item" href="#">Kitchen Hardware</a>
-                    <a className="dropdown-item" href="#">Prime Deals</a>
-                    <a className="dropdown-item" href="#">Book</a>
+                    <a className="dropdown-item" href="#">{t('navbar.product_category.all')}</a>
+                    <a className="dropdown-item" href="#">{t('navbar.product_category.smartphone')}</a>
+                    <a className="dropdown-item" href="#">{t('navbar.product_category.kitchen_hardware')}</a>
+                    <a className="dropdown-item" href="#">{t('navbar.product_category.prime_deal')}</a>
+                    <a className="dropdown-item" href="#">{t('navbar.product_category.book')}</a>
                   </div>
                 </div>
               </div>
@@ -85,15 +85,15 @@ function NavbarView(props) {
                 <form className="p-3">
                   <div className="dropdown-divider"></div>
                   <div className="custom-control custom-radio mb-2">
-                    <input className="custom-control-input" type="radio" name="prefLang" id="englishLang" value="english"
-                      checked />
+                    <input className="custom-control-input" type="radio" name="prefLang" id="englishLang" value="en"
+                      onClick={props.handleChangeLang} checked={props.prefLang == 'en' ? true : false} />
                     <label className="custom-control-label" htmlFor="englishLang">
                       <img src="assets/img/flag/english.svg" alt="uk flag" width="50" height="30" />
                     </label>
                   </div>
                   <div className="dropdown-divider"></div>
                   <div className="custom-control custom-radio mb-2">
-                    <input className="custom-control-input" type="radio" name="prefLang" id="hindiLang" value="hindi" checked />
+                    <input className="custom-control-input" type="radio" name="prefLang" id="hindiLang" value="in" onClick={props.handleChangeLang} checked={props.prefLang == 'in' ? true : false} />
                     <label className="custom-control-label" htmlFor="hindiLang">
                       <img src="assets/img/flag/hindi.svg" alt="uk flag" width="50" height="30" />
                     </label>
@@ -111,8 +111,8 @@ function NavbarView(props) {
               </a>
               <div className="dropdown-menu px-3" aria-labelledby="userAccount">
                 <div className="d-flex flex-column justify-content-center">
-                  <a href="login.html" className="btn btn-warning w-75 btn-sm font-weight-bold">Signin</a>
-                  <small>New customer?<a href="register.html"> Start here.</a></small>
+                  <a href="login.html" className="btn btn-warning w-75 btn-sm font-weight-bold">{t('navbar.menu_signin_btn_title')}</a>
+                  <small>{t('navbar.menu_signin_sub_title')}<a href="register.html"> {t('navbar.menu_signing_register_text')}</a></small>
                 </div>
               </div>
             </li> {/* <!-- User Account Ends --> */}
