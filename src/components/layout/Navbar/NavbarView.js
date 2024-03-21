@@ -47,25 +47,25 @@ function NavbarView(props) {
     
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {/* <!-- Search Bar Starts --> */}
-          <form className="form-inline px-lg-5" noValidate method="get">
+          <form className="form-inline px-lg-5" onSubmit={props.handleSearch} noValidate method="get">
             <div className="input-group">
               <div className="input-group-prepend">
                 <div className="dropdown">
                   <button className="btn btn-secondary dropdown-toggle" name="btnCategory" type="button"
                     id="btnCategoryDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    All
+                    {t(props.productCategory[props.selectedCat])}
                   </button>
                   <div className="dropdown-menu" aria-labelledby="btnCategoryDropdownMenu">
-                    <a className="dropdown-item" href="#">{t('navbar.product_category.all')}</a>
-                    <a className="dropdown-item" href="#">{t('navbar.product_category.smartphone')}</a>
-                    <a className="dropdown-item" href="#">{t('navbar.product_category.kitchen_hardware')}</a>
-                    <a className="dropdown-item" href="#">{t('navbar.product_category.prime_deal')}</a>
-                    <a className="dropdown-item" href="#">{t('navbar.product_category.book')}</a>
+                    <a className="dropdown-item" href="#" onClick={(e) => {props.handleCatChange(e, 0)}}>{t('navbar.product_category.all')}</a>
+                    <a className="dropdown-item" href="#" onClick={(e) => {props.handleCatChange(e, 1)}}>{t('navbar.product_category.smartphone')}</a>
+                    <a className="dropdown-item" href="#" onClick={(e) => {props.handleCatChange(e, 2)}}>{t('navbar.product_category.kitchen_hardware')}</a>
+                    <a className="dropdown-item" href="#" onClick={(e) => {props.handleCatChange(e, 3)}}>{t('navbar.product_category.prime_deal')}</a>
+                    <a className="dropdown-item" href="#" onClick={(e) => {props.handleCatChange(e, 4)}}>{t('navbar.product_category.book')}</a>
                   </div>
                 </div>
               </div>
-              <input type="text" className="form-control" size="50" name="query" id="query" />
-              <input type="text" name="category" id="category" value="book" hidden />
+              <input type="text" className="form-control" size="50" name="query" id="query" onChange={props.handleQueryChange} value={props.qurey} />
+              <input type="text" name="category" id="category" value={props.selectedCat} hidden />
               <div className="input-group-append">
                 <button type="submit" className="btn btn-warning">
                   <i className="fas fa-search"></i>
@@ -82,8 +82,12 @@ function NavbarView(props) {
                 <i className="fas fa-2x fa-language"></i>
               </a>
               <div className="dropdown-menu" aria-labelledby="prefLanguageDropdown">
+
+
                 <form className="p-3">
                   <div className="dropdown-divider"></div>
+
+
                   <div className="custom-control custom-radio mb-2">
                     <input className="custom-control-input" type="radio" name="prefLang" id="englishLang" value="en"
                       onClick={props.handleChangeLang} checked={props.prefLang == 'en' ? true : false} />
@@ -91,7 +95,10 @@ function NavbarView(props) {
                       <img src="assets/img/flag/english.svg" alt="uk flag" width="50" height="30" />
                     </label>
                   </div>
+
+
                   <div className="dropdown-divider"></div>
+
                   <div className="custom-control custom-radio mb-2">
                     <input className="custom-control-input" type="radio" name="prefLang" id="hindiLang" value="in" onClick={props.handleChangeLang} checked={props.prefLang == 'in' ? true : false} />
                     <label className="custom-control-label" htmlFor="hindiLang">
@@ -116,6 +123,8 @@ function NavbarView(props) {
                 </div>
               </div>
             </li> {/* <!-- User Account Ends --> */}
+
+                 
             {/* <!-- Shopping Cart Starts --> */}
             <li className="nav-item px-2">
               <a className="nav-link" href="#" aria-disabled="true">
