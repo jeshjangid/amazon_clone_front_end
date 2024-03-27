@@ -1,0 +1,40 @@
+import React, { useState } from 'react';
+import LoginView from './LoginView';
+
+const LoginContainer = () => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'email') {
+      setEmail(value);
+    } else if (name === 'password') {
+      setPassword(value);
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const user = {
+      email,
+      password
+    };
+    console.log(user);
+  }
+
+
+  return (
+    <React.Fragment>
+        <LoginView
+         handleChange={handleChange}
+         handleSubmit={handleSubmit}
+         {...email}
+         {...password}
+        />
+    </React.Fragment>
+  )
+}
+
+export default LoginContainer
