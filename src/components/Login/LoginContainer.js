@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LoginView from './LoginView';
 
-const LoginContainer = () => {
+const LoginContainer = (props) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,6 +32,7 @@ const LoginContainer = () => {
          handleSubmit={handleSubmit}
          {...email}
          {...password}
+         {...props}
         />
     </React.Fragment>
   )

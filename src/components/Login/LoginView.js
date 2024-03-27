@@ -1,54 +1,54 @@
 import React from 'react'
 
 function LoginView(props) {
-
+  const {t} = props;
 
   return (
     <React.Fragment>
     <div className="container mb-5">
       <div className="card mx-auto mt-5 pb-3 shadow rounded" style={{width: "25rem"}}>
         <div className="card-body">
-          <h4 className="card-title">Login</h4>
+          <h4 className="card-title">{t('login.title')}</h4>
           {/* <!-- Login Form Start --> */}
           <form className="needs-validation" onSubmit={props.handleSubmit} autoComplete="off" method="post" action="#" noValidate>
             <div className="form-group">
-              <label htmlFor="userEmail">Email: </label>
+              <label htmlFor="userEmail">{t('login.lbl_email')} </label>
               <input type="email" name="email" className="form-control" placeholder="Enter Email Address" id="userEmail"
                 aria-describedby="emailHelp" value={props.email} onChange={props.handleChange} required />
-              <small id="emailHelp" className="form-text text-muted"><i className="fas text-primary fa-info"></i> We'll never share your email with anyone else.</small>
+              <small id="emailHelp" className="form-text text-muted"><i className="fas text-primary fa-info"></i> {t('login.email_info')}</small>
               <div className="valid-feedback">
-                <i className="far text-success fa-thumbs-up"></i> OK
+                <i className="far text-success fa-thumbs-up"></i> {t('validation.ok')}
               </div>
               <div className="invalid-feedback">
-                <i className="fas text-danger fa-exclamation-triangle"></i> Some error in email.
+                <i className="fas text-danger fa-exclamation-triangle"></i> {t('validation.email_error')}
               </div>
             </div>
             <div className="form-group">
-              <label htmlFor="userPassword">Password: </label>
+              <label htmlFor="userPassword">{t('login.lbl_password')} </label>
               <input type="password" className="form-control" placeholder="******" name="password" id="userPassword"
                 aria-describedby="passwordHelp" value={props.password} onChange={props.handleChange} required minLength="6" />
-              <small id="passwordHelp" className="form-text text-muted"><i className="fas text-primary fa-info"></i> Password must be at least 6 characters.</small>
+              <small id="passwordHelp" className="form-text text-muted"><i className="fas text-primary fa-info"></i> {t('login.password_info')}</small>
               <div className="valid-feedback">
-                <i className="far text-success fa-thumbs-up"></i> OK
+                <i className="far text-success fa-thumbs-up"></i> {t('validation.ok')}
               </div>
               <div className="invalid-feedback">
-                <i className="fas text-danger fa-exclamation-triangle"></i> Some error in password.
+                <i className="fas text-danger fa-exclamation-triangle"></i> {t('validation.password_error')}
               </div>
             </div>
-            <button type="submit" className="btn btn-warning w-100 shadow btn-sm rounded">Sign in</button>
+            <button type="submit" className="btn btn-warning w-100 shadow btn-sm rounded">{t('login.btn_signin')}</button>
           </form>
            {/* <!-- Login Form Ends --> */}
   
           {/* <!-- OR Seperator --> */}
-          <hr className="hr-text" data-content="New to Amazon?" />
+          <hr className="hr-text" data-content={t('login.seperator_text')} />
 
           {/* <!-- Create account button --> */}
-          <a href="register.html" className="btn btn-dark btn-sm w-100 mt-2">Create your Amazon account</a>
+          <a href="register.html" className="btn btn-dark btn-sm w-100 mt-2">{t('login.btn_register_text')}</a>
           <a href="#" className="btn btn-outline-success btn-sm w-100 mt-2">
-            <i className="fab fa-google"></i> Sign in with Google
+            <i className="fab fa-google"></i> {t('login.btn_login_google')}
           </a>
           <a href="#" className="btn btn-outline-primary btn-sm w-100 mt-2">
-            <i className="fab fa-facebook-square"></i> Sign in with Facebook
+          <i className="fab fa-facebook-square"></i> {t('login.btn_login_facebook')}
           </a>
         </div>
       </div>

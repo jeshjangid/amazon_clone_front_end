@@ -66,6 +66,9 @@
       "btn_login_facebook": "Sign in with Facebook"
     },
     "validation": {
+      "email_error": "Some error in email.",
+      "password_error": "Some error in password.",
+      "ok": "OK",
       "username_empty": "Username cannot be empty.",
       "password_empty": "Password cannot be empty.",
       "password2_empty": "Re-type Password cannot be empty.",

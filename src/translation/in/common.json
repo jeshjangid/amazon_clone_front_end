@@ -66,6 +66,9 @@
       "btn_login_facebook": "फ़ेसबुक से साइन इन करें"
     },
     "validation": {
+      "email_error": "ईमेल में कुछ त्रुटि।",
+      "password_error": "पासवर्ड में कुछ त्रुटि।",
+      "ok": "ठीक है।",
       "username_empty": "उपयोगकर्ता नाम खाली नहीं हो सकता।",
       "password_empty": "पासवर्ड खाली नहीं हो सकता",
       "password2_empty": "पासवर्ड दोबारा टाइप न करें।",
