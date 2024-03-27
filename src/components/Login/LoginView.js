@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function LoginView(props) {
   const {t} = props;
@@ -43,7 +44,7 @@ function LoginView(props) {
           <hr className="hr-text" data-content={t('login.seperator_text')} />
 
           {/* <!-- Create account button --> */}
-          <a href="register.html" className="btn btn-dark btn-sm w-100 mt-2">{t('login.btn_register_text')}</a>
+          <a href="login.html" className="btn btn-dark btn-sm w-100 mt-2">{t('login.btn_register_text')}</a>
           <a href="#" className="btn btn-outline-success btn-sm w-100 mt-2">
             <i className="fab fa-google"></i> {t('login.btn_login_google')}
           </a>
