@@ -5,7 +5,7 @@ function RegisterContainer(props) {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [password1, setPassword1] = useState('');
     const [password2, setPassword2] = useState('');
 
     const handleChange = (e) => {
@@ -14,8 +14,8 @@ function RegisterContainer(props) {
         setName(value);
         }else if(name === 'email') {
             setEmail(value)
-        }else if(name === 'password') {
-            setPassword(value)
+        }else if(name === 'password1') {
+            setPassword1(value)
         }else if(name === 'password2') {
             setPassword2(value)
         }
@@ -28,7 +28,7 @@ function RegisterContainer(props) {
         const user = {
             name,
             email,
-            password,
+            password1,
             password2,
           };
           console.log(user);
